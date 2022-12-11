@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#phone_list .card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+#phone_list .card .card-header {
+  position: relative;
+  padding: 0;
+}
+#phone_list .card .card-header img {
+  width: 100%;
+}
+#phone_list .card .card-header span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#phone_list .card .card-footer {
+  padding: 10px;
+  border: none;
+  background-color: white;
+}
+#phone_list .card:hover {
+  scale: 1.1;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=style.css.map */

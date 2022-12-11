@@ -1,0 +1,29 @@
+#phone_list{
+    .card{
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.5s;
+        .card-header{
+            position: relative;
+            padding: 0;
+            img{
+                width: 100%;
+            }
+            span{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        .card-footer{
+            padding: 10px;
+            border: none;
+            background-color: white;
+        }
+        &:hover{
+            scale: 1.1;
+            box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+    }
+}
