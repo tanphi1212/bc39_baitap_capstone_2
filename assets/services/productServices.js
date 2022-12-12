@@ -1,5 +1,5 @@
 function ProductServices() {
-    var ProductList = [];
+    this.ProductList = [];
     // Lấy danh sách sản phẩm từ API
     this.getListProductApi = function () {
         return axios({
@@ -7,6 +7,10 @@ function ProductServices() {
             method: "GET",
         });
     }
+
+    this.addProduct = function (product) {
+        this.ProductList.push(product);
+    };
 }
 
 export default ProductServices;
