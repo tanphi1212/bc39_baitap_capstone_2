@@ -44,7 +44,7 @@ function renderHTML(data) {
                     <p class="card-text">${pro.desc}</p>
                 </div>
                 <div class="card-footer d-flex justify-content-center">
-                    <button class="btn btn-success" onclick="addToCart()">Add to Cart </button>
+                    <button class="btn btn-success" onclick="addToCart(${pro.id})">Add to Cart </button>
                 </div>
             </div>
         </div>
@@ -79,6 +79,6 @@ function renderHTML(data) {
     getEle("listProduct").innerHTML = content;
 }
 
-function addToCart() {
-    console.log(123);
+function addToCart(id) {
+    console.log(id);
 }
