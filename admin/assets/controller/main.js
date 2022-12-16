@@ -109,6 +109,35 @@ function updateProduct(id) {
     var descrPro = getEle("descrPro").value;
     var typePro = getEle("typePro").value;
 
+    var flag = true;
+    //Name
+    flag &= validation.kiemTraRong("nameError", namePro, "Vui lòng không để trống");
+
+    // Price
+    flag &= validation.kiemTraRong("priceError", pricePro, "Vui lòng không để trống");
+    flag &= validation.kiemTraSoAm("priceError", pricePro, "Vui lòng nhập giá đúng!")
+
+    // Screen
+    flag &= validation.kiemTraRong("scrError", screenP, "Vui lòng không để trống");
+
+    // frontCamera
+    flag &= validation.kiemTraRong("frontError", frontPro, "Vui lòng không để trống");
+
+    // backCamera
+    flag &= validation.kiemTraRong("backError", backPro, "Vui lòng không để trống");
+
+    // Image
+    flag &= validation.kiemTraRong("imgError", imgPro, "Vui lòng không để trống");
+
+    // desciption
+    flag &= validation.kiemTraRong("descrError", descrPro, "Vui lòng không để trống");
+
+    // type
+    flag &= validation.kiemTraChon("typePro", "typeError", "Vui lòng chọn");
+    if(!flag){
+        return
+    }
+
     var prodt = new Product(id, namePro, pricePro, screenP, backPro, frontPro, imgPro, descrPro, typePro);
     // var prodt = getInfo();
     productService.updateProductApi(prodt)
@@ -222,9 +251,10 @@ function getInfo(isAdd) {
     // type
     flag &= validation.kiemTraChon("typePro", "typeError", "Vui lòng chọn");
 
-    if (flag == true) {
-        var prodt = new Product("", namePro, pricePro, screenP, backPro, frontPro, imgPro, descrPro, typePro);
-        return prodt;
+    if (!flag) {
+        return
     }
+    var prodt = new Product("", namePro, pricePro, screenP, backPro, frontPro, imgPro, descrPro, typePro);
+    return prodt;
 
 }
